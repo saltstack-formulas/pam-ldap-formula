@@ -1,23 +1,22 @@
 {% from "pam-ldap/map.jinja" import pam_ldap with context %}
 
 tls_cacertfile:
-    file.managed:
-        - source: salt://pam-ldap/files/cert
-        - user: root
-        - group: root
-        - mode: 640
+  file.managed:
+    - source: salt://pam-ldap/files/cert
+    - user: root
+    - group: root
+    - mode: 640
 
 pam-ldap:
-    pkg:
-        - installed
-        - name: {{ pam_ldap.pkg }}
+  pkg.installed
+    - name: {{ pam_ldap.pkg }}
 
 {{ pam_ldap.config }}:
-   file.managed:
-        - source: salt://pam-ldap/files/ldap.conf
-        - user: user
-        - group: user
-        - mode: 644
+  file.managed:
+    - source: salt://pam-ldap/files/ldap.conf
+    - user: user
+    - group: user
+    - mode: 644
 
 ldap_conf:
   file.append:
