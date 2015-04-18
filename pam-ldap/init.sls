@@ -8,7 +8,7 @@ tls_cacertfile:
     - mode: 640
 
 pam-ldap:
-  pkg.installed
+  pkg.installed:
     - name: {{ pam_ldap.pkg }}
 
 {{ pam_ldap.config }}:
