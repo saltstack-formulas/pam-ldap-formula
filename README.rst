@@ -2,6 +2,12 @@
 pam-ldap
 =========
 
+.. warning::
+
+    This formula is deprecated. Please use https://github.com/saltstack-formulas/pam-formula instead.
+
+****
+
 Formula to set up and configure ldap authentication.
 
 .. note::
